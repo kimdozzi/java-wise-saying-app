@@ -54,7 +54,21 @@ public class WiseSayingController {
             System.out.println("id(정수)를 입력해주세요.");
             return;
         }*/
+        // 입력된 id와 일치하는 명언객체 찾기
+        WiseSaying wiseSaying = findById(id);
+
+        // 찾은 명언객체를 리스트에서 제거
+        wiseSayings.remove(wiseSaying);
 
         System.out.printf("%d번 명언이 삭제되었습니다.\n", id);
+    }
+    private WiseSaying findById(int id) {
+        for (WiseSaying wiseSaying : wiseSayings) {
+            if (wiseSaying.getId() == id) {
+                return wiseSaying;
+            }
+        }
+
+        return null;
     }
 }
