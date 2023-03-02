@@ -1,3 +1,4 @@
+/*
 package Test07;
 
 import java.io.BufferedReader;
@@ -87,3 +88,4 @@ class 명언앱 {
     }
 }
 
+*/
