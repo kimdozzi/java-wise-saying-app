@@ -14,6 +14,27 @@ public class App {
             // trim() : 혹시 있을지 모를 좌우공백제거된 버전으로 주세요.
             String command = Container.getScanner().nextLine().trim();
 
+            Rq rq = new Rq(command);
+            switch (rq.getActionCode()) {
+                case "종료":
+                    systemController.exit();
+                    return;
+                case "등록":
+                    wiseSayingController.write();
+                    break;
+                case "목록":
+                    wiseSayingController.list();
+                    break;
+                case "삭제":
+                    wiseSayingController.remove();
+                    break;
+            }
+            System.out.printf("actionCode : %s\n", rq.getActionCode());
+            System.out.printf("params.id : %s\n", rq.getParam("id"));
+            System.out.printf("params.authorName : %s\n", rq.getParam("authorName"));
+            System.out.printf("params.content : %s\n", rq.getParam("content"));
+
+/*
             if (command.equals("종료")) {
                 systemController.exit();
                 break;
@@ -32,7 +53,8 @@ public class App {
                 System.out.printf("params.content : %s\n", rq.getParam("content"));
                 // 정리 끝
                 wiseSayingController.remove();
-            }
+
+            }*/
         }
     }
 }

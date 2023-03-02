@@ -5,11 +5,15 @@ import java.util.Map;
 
 public class Rq {
     private String actionCode;
-    private Map<String, String> params = new HashMap<>();
+    private Map<String, String> params;
 
     public Rq(String command) {
         String[] commandBits = command.split("\\?", 2); // 최대 두개까지 나논다.
         actionCode = commandBits[0];
+
+        params = new HashMap<>();
+
+        if(commandBits.length == 1) return;
 
         String[] paramBits = commandBits[1].split("&");
 
