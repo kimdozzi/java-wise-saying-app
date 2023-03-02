@@ -1,5 +1,4 @@
-/*
-package Test06;
+package Test07;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,14 +11,18 @@ public class Main {
         System.out.println("== 명언 앱 ==");
         int count = 0; int index = 1;
         while (true) {
-            a명언앱[count] = new 명언앱();
-
+            // 명령
             System.out.print("명령) ");
             String input = br.readLine().trim();
+
+            // 종료
             if (input.equals("종료")) {
                 break;
             }
+
+            // 등록
             else if(input.equals("등록")) {
+                a명언앱[count] = new 명언앱();
                 System.out.print("명언 : ");
                 a명언앱[count].set명언(br.readLine());
                 System.out.print("작가 : ");
@@ -27,23 +30,30 @@ public class Main {
 
                 a명언앱[count].set등록번호(index);
                 System.out.println(index + "번 명언이 등록되었습니다.");
+                count++; index++;
             }
+
+            // 목록
             else if (input.equals("목록")) {
                 System.out.println("----------------------");
                 for(int i = count-1; i >= 0; i--) {
                     System.out.println(a명언앱[i].get등록번호() + " / " + a명언앱[i].get작가() + " / " + a명언앱[i].get명언());
                 }
             }
-            else if (input.equals("종료")){
-                break;
-            }
+
+            // 삭제
             else {
                 int deleteNumber = Integer.parseInt(input.substring(input.length()-1));
-                a명언앱[deleteNumber] = null;
-                System.out.println(deleteNumber + "번 명언이 삭제되었습니다.");
-
+                try {
+                    if (a명언앱[deleteNumber].get등록번호() > 0) {
+                        a명언앱[deleteNumber] = null;
+                        System.out.println(deleteNumber + "번 명언이 삭제되었습니다.");
+                    }
+                }
+                catch (Exception e) {
+                    System.out.println(deleteNumber + "번 명언은 존재하지 않습니다.");
+                }
             }
-            count++; index++;
         }
     }
 }
@@ -76,4 +86,4 @@ class 명언앱 {
         this.작가 = 작가;
     }
 }
-*/
+
