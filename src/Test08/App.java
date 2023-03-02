@@ -26,7 +26,7 @@ public class App {
                     wiseSayingController.list();
                     break;
                 case "삭제":
-                    wiseSayingController.remove();
+                    wiseSayingController.remove(rq);
                     break;
             }
             System.out.printf("actionCode : %s\n", rq.getActionCode());
