@@ -1,5 +1,4 @@
-/*
-package Test05;
+package Test06;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -19,13 +18,7 @@ public class Main {
             if (input.equals("종료")) {
                 break;
             }
-            else if (input.equals("목록")) {
-                System.out.println("----------------------");
-                for(int i = count-1; i >= 0; i--) {
-                    System.out.println(a명언앱[i].get등록번호() + " / " + a명언앱[i].get작가() + " / " + a명언앱[i].get명언());
-                }
-            }
-            else {
+            else if(input.equals("등록")) {
                 System.out.print("명언 : ");
                 a명언앱[count].set명언(br.readLine());
                 System.out.print("작가 : ");
@@ -33,8 +26,23 @@ public class Main {
 
                 a명언앱[count].set등록번호(index);
                 System.out.println(index + "번 명언이 등록되었습니다.");
-                count++; index++;
             }
+            else if (input.equals("목록")) {
+                System.out.println("----------------------");
+                for(int i = count-1; i >= 0; i--) {
+                    System.out.println(a명언앱[i].get등록번호() + " / " + a명언앱[i].get작가() + " / " + a명언앱[i].get명언());
+                }
+            }
+            else if (input.equals("종료")){
+                break;
+            }
+            else {
+                int deleteNumber = Integer.parseInt(input.substring(input.length()-1));
+                a명언앱[deleteNumber] = null;
+                System.out.println(deleteNumber + "번 명언이 삭제되었습니다.");
+
+            }
+            count++; index++;
         }
     }
 }
@@ -66,4 +74,4 @@ class 명언앱 {
     public void set작가(String 작가) {
         this.작가 = 작가;
     }
-}*/
+}
