@@ -29,7 +29,7 @@ public class App {
                     wiseSayingController.remove(rq);
                     break;
                 case "수정":
-                    wiseSayingController.modity();
+                    wiseSayingController.modify(rq);
                     break;
             }
             /*
