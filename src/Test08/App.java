@@ -2,10 +2,6 @@ package Test08;
 import Test08.system.controller.SystemController;
 import Test08.wiseSaying.controller.WiseSayingController;
 
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Map;
-
 public class App {
     public void run() {
         System.out.println("== 명언 앱 ==");
@@ -28,26 +24,12 @@ public class App {
             } else if (command.equals("목록")) {
                 wiseSayingController.list();
             } else if (command.startsWith("삭제")) {
-
                 // 정리 시작
-                String[] commandBits = command.split("\\?", 2); // 최대 두개까지 나논다.
-                String actionCode = commandBits[0];
-                Map<String, String> params = new HashMap<>();
-                String[] paramBits = commandBits[1].split("&");
-
-                for(String param : paramBits) {
-                    String[] paramStrBits = param.split("=", 2);
-                    String key = paramStrBits[0];
-                    String value = paramStrBits[1];
-
-                    params.put(key, value);
-                }
-                System.out.println(Arrays.toString(commandBits));
-                System.out.printf("actionCode : %s\n", actionCode);
-                System.out.printf("paramsBits : %s\n", params);
-
-
-
+                Rq rq = new Rq(command);
+                System.out.printf("actionCode : %s\n", rq.getActionCode());
+                System.out.printf("params.id : %s\n", rq.getParam("id"));
+                System.out.printf("params.authorName : %s\n", rq.getParam("authorName"));
+                System.out.printf("params.content : %s\n", rq.getParam("content"));
                 // 정리 끝
                 wiseSayingController.remove();
             }
