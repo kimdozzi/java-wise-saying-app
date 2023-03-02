@@ -5,7 +5,6 @@ import Test08.wiseSaying.controller.WiseSayingController;
 public class App {
     public void run() {
         System.out.println("== 명언 앱 ==");
-
         SystemController systemController = new SystemController();
         WiseSayingController wiseSayingController = new WiseSayingController();
 
@@ -62,7 +61,8 @@ public class App {
                 System.out.printf("params.content : %s\n", rq.getParam("content"));
                 // 정리 끝
                 wiseSayingController.remove();
-            }*/
+            }
+            */
         }
     }
 }
