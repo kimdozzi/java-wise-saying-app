@@ -48,14 +48,22 @@ public class WiseSayingController {
             System.out.println("id(정수)를 입력해주세요.");
             return;
         }
-        /*try {
+        /*
+        try {
             id = Integer.parseInt(rq.getParam("id"));
         } catch (NumberFormatException e) {
             System.out.println("id(정수)를 입력해주세요.");
             return;
-        }*/
+        }
+        */
+
         // 입력된 id와 일치하는 명언객체 찾기
         WiseSaying wiseSaying = findById(id);
+
+        if(wiseSaying == null) {
+            System.out.printf("%d번 명언은 존재하지 않습니다.", id);
+            return;
+        }
 
         // 찾은 명언객체를 리스트에서 제거
         wiseSayings.remove(wiseSaying);
@@ -70,5 +78,9 @@ public class WiseSayingController {
         }
 
         return null;
+    }
+
+    public void modity() {
+
     }
 }

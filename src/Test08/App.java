@@ -28,13 +28,22 @@ public class App {
                 case "삭제":
                     wiseSayingController.remove(rq);
                     break;
+                case "수정":
+                    wiseSayingController.modity();
+                    break;
             }
+            /*
+            // 삭제할 때 각 param을 확인하기 위한 sout
+
             System.out.printf("actionCode : %s\n", rq.getActionCode());
             System.out.printf("params.id : %s\n", rq.getParam("id"));
             System.out.printf("params.authorName : %s\n", rq.getParam("authorName"));
             System.out.printf("params.content : %s\n", rq.getParam("content"));
+            */
 
-/*
+            /*
+            // if문을 사용한 조건
+
             if (command.equals("종료")) {
                 systemController.exit();
                 break;
@@ -53,7 +62,6 @@ public class App {
                 System.out.printf("params.content : %s\n", rq.getParam("content"));
                 // 정리 끝
                 wiseSayingController.remove();
-
             }*/
         }
     }
