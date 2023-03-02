@@ -42,14 +42,18 @@ public class WiseSayingController {
     }
 
     public void remove(Rq rq) {
-        int id = -1;
+        int id = rq.getIntParam("id", -1);
 
-        try {
+        if (id == -1) {
+            System.out.println("id(정수)를 입력해주세요.");
+            return;
+        }
+        /*try {
             id = Integer.parseInt(rq.getParam("id"));
         } catch (NumberFormatException e) {
             System.out.println("id(정수)를 입력해주세요.");
             return;
-        }
+        }*/
 
         System.out.printf("%d번 명언이 삭제되었습니다.\n", id);
     }
