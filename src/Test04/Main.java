@@ -1,3 +1,4 @@
+/*
 package Test04;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -40,4 +41,4 @@ class 명언앱 {
     public void set작가(String 작가) {
         this.작가 = 작가;
     }
-}
+}*/
