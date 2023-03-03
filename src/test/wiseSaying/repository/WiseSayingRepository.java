@@ -1,7 +1,6 @@
-package Test08.wiseSaying.repository;
+package test.wiseSaying.repository;
 
-import Test08.wiseSaying.entity.WiseSaying;
-
+import test.wiseSaying.entity.WiseSaying;
 import java.util.ArrayList;
 import java.util.List;
 

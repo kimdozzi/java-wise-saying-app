@@ -1,8 +1,7 @@
-package Test08.wiseSaying.service;
+package test.wiseSaying.service;
 
-import Test08.Container;
-import Test08.wiseSaying.entity.WiseSaying;
-import Test08.wiseSaying.repository.WiseSayingRepository;
+import test.wiseSaying.entity.WiseSaying;
+import test.wiseSaying.repository.WiseSayingRepository;
 
 import java.util.List;
 

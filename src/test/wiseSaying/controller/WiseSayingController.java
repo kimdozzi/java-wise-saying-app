@@ -1,11 +1,11 @@
-package Test08.wiseSaying.controller;
-
-import Test08.Container;
-import Test08.Rq;
-import Test08.wiseSaying.entity.WiseSaying;
-import Test08.wiseSaying.service.WiseSayingService;
+package test.wiseSaying.controller;
+import test.wiseSaying.entity.WiseSaying;
+import test.Container;
+import test.Rq;
+import test.wiseSaying.service.WiseSayingService;
 
 import java.util.List;
+
 
 public class WiseSayingController {
     private final WiseSayingService wiseSayingService;
@@ -63,7 +63,7 @@ public class WiseSayingController {
         WiseSaying wiseSaying = wiseSayingService.findById(id);
 
         if(wiseSaying == null) {
-            System.out.printf("%d번 명언은 존재하지 않습니다.", id);
+            System.out.printf("%d번 명언은 존재하지 않습니다.\n", id);
             return;
         }
 

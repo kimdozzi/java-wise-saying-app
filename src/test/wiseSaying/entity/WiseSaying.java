@@ -1,4 +1,4 @@
-package Test08.wiseSaying.entity;
+package test.wiseSaying.entity;
 
 public class WiseSaying {
     private long id;

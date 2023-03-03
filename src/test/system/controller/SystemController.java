@@ -1,4 +1,4 @@
-package Test08.system.controller;
+package test.system.controller;
 
 public class SystemController {
     public void exit() {

@@ -1,6 +1,6 @@
-package Test08;
-import Test08.system.controller.SystemController;
-import Test08.wiseSaying.controller.WiseSayingController;
+package test;
+import test.system.controller.SystemController;
+import test.wiseSaying.controller.WiseSayingController;
 
 public class App { // 라우팅 역할
     public void run() {
