@@ -2,7 +2,7 @@ package Test08;
 import Test08.system.controller.SystemController;
 import Test08.wiseSaying.controller.WiseSayingController;
 
-public class App {
+public class App { // 라우팅 역할
     public void run() {
         System.out.println("== 명언 앱 ==");
         SystemController systemController = new SystemController();
